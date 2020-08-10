@@ -44,17 +44,19 @@ export default function Input() {
     // When the input changes, its whole value can be found inside the event object.
     // Log out the synthetic event object 'evt' and see for yourself.
     const { value } = evt.target;
-
+    setInputValue(value)
     /* STEP 4 */
   };
   const reset = () => {
+    setInputValue("")
     /* STEP 5 */
   };
 
   const style = {
     fontSize: '1.5em',
     marginBottom: '0.3em',
-    color: (inputValue.length < 10)
+    textTransform: 'uppercase',
+    color: (inputValue.length > 10)
      ? 'crimson'
      : 'royalblue', /* STEP 2 */
   };
@@ -62,9 +64,9 @@ export default function Input() {
   return (
     <div className='widget-input container'>
       <h2>Input</h2>
-      <div style={style}></div> {/* STEP 3 */}
+  <div style={style}>{inputValue}</div> {/* STEP 3 */}
       <div>
-        <input type='text' onChange={changeInput} /> {/* STEP 6 */}
+        <input type='text' value={inputValue} onChange={changeInput}/> {/* STEP 6 */}
         <button onClick={reset}>Reset</button>
       </div>
     </div>
