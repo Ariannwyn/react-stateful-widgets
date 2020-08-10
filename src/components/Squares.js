@@ -31,7 +31,6 @@ export default function Squares() {
     // and should return a class name of active if the id passed
     // matches the active square in state, empty string otherwise.
     // Right-click and "inspect element" on the square to see its effect.
-    console.log(activeSquare)
     return activeSquare === id
     ? "active"
     : ""
